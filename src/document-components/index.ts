@@ -1,0 +1,1 @@
+export { default as DocText } from './DocText.vue';
