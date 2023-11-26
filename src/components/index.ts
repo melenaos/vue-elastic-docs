@@ -1,0 +1,1 @@
+export { default as ElasticDocPage } from './ElasticDocPage.vue';

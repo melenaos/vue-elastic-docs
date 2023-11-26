@@ -10,6 +10,9 @@
     "src"
   ],
   "scripts": {
+    "dev-site": "vite",
+    "build-site": "vite build",
+    "preview-site": "vite preview",
     "build": "rollup -c",
     "lint": "eslint src/**/*.{js,ts,tsx} --quiet --fix",
     "test": "jest --coverage",
@@ -21,9 +24,15 @@
   },
   "peerDependencies": {
     "vue": "^3.2.47",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "vue-markdown-render":"^2.1.1",
+    "markdown-it-prism":"^2.3.0"
   },
   "devDependencies": {
+    "vue-markdown-render":"^2.1.1",
+    "markdown-it-prism":"^2.3.0",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "vite": "^5.0.0",
     "@babel/core": "^7.13.16",
     "@babel/preset-env": "^7.13.15",
     "@babel/preset-typescript": "^7.13.0",
