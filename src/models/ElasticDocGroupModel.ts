@@ -1,5 +1,6 @@
 import ElasticDocPageModel from "./ElasticDocPageModel";
 
-export interface ElasticDocsModel {
+export default interface ElasticDocGroupModel{
+    title: string;
     pages: Array<ElasticDocPageModel>;
 }

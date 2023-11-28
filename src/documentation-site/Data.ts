@@ -1,9 +1,10 @@
-import { ElasticDocsModel } from "src/models/ElasticDocsDataModel";
+import { ElasticDocsModel } from "src/models/ElasticDocsModel";
 // https://v2.vuepress.vuejs.org/reference/plugin/docsearch.html
 // https://github.com/egoist/docute
 // https://vue-community.org/guide/ecosystem/documentation.html#documentation-websites
 
 const defaultValue = {
+    baseUrl:'docs',
     pages: [{
         title: "Introduction",
         sections: [
