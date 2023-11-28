@@ -25,6 +25,6 @@ body{
 }
 
 main{
-  grid-column: 2;
+  grid-column: 3;
 }
 </style>
