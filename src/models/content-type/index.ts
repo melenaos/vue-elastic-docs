@@ -1,12 +1,16 @@
-import ElasticDocContentImageModel from "./ElasticDocContentImageModel";
-import ElasticDocContentTextModel from "./ElasticDocContentTextModel";
-import ElasticDocContentYouTubeVideoModel from "./ElasticDocContentVideoModel";
-import ElasticDocContentMarkdownModel from './ElasticDocContentMarkdownModel';
-import ElasticDocContentCodeModel from './ElasticDocContentCodeModel';
+import Image from "./Image";
+import Text from "./Text";
+import YouTubeVideo from "./YouTubeVideo";
+import Markdown from './Markdown';
+import Code from './Code';
+import RouterLink from "./RouterLink";
+import ExternalLink from "./ExternalLink";
 
-export type ElasticDocContentModel = 
-                            ElasticDocContentTextModel | 
-                            ElasticDocContentImageModel | 
-                            ElasticDocContentYouTubeVideoModel | 
-                            ElasticDocContentCodeModel |
-                            ElasticDocContentMarkdownModel; 
+export type ElasticDocContentModel =
+    ExternalLink |
+    RouterLink |
+    Text |
+    Image |
+    YouTubeVideo |
+    Code |
+    Markdown

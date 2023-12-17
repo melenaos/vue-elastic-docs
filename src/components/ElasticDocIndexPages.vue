@@ -1,25 +1,40 @@
 <template>
-    <div>
-        <template v-for="page in pages">
-            <a :href="getHandle(data.baseUrl, page)">{{ page.title }}</a>
-        </template>
-    </div>
+    <template v-for="page in pages">
+        <router-link :to="getPath(data.baseUrl, page)" :class="cssClass(page)">{{ page.title }}</router-link>
+    </template>
 </template>
   
 <script lang="ts">
-import { defineComponent } from 'vue';
-import ElasticDocsPageModel from '../models/ElasticDocPageModel'
+import { computed, defineComponent } from 'vue';
+import ElasticDocPageModel from '../models/ElasticDocPageModel'
+import getPath from '../utilities/getPath'
 import getHandle from '../utilities/getHandle'
 import ElasticDocsModel from '../models/ElasticDocsModel'
+import ElasticDocCssOptions from 'src/models/ElasticDocCssOptions';
 
 export default defineComponent({
     props: {
-        data: undefined as ElasticDocsModel | undefined,
-        pages: undefined as Array<ElasticDocsPageModel> | undefined
+        data: {
+            type: Object as () => ElasticDocsModel,
+            required: true,
+        },
+        pages: {
+            type: Object as () => Array<ElasticDocPageModel>,
+            required: true,
+        },
+        cssOptions: {
+            type: Object as () => ElasticDocCssOptions,
+            required: true,
+        },
+        active: String
     },
-    setup() {
+    setup(props) {
+        const cssClass = (page: ElasticDocPageModel) =>
+            `${props.cssOptions.indexLink} ${getHandle(page) == props.active ? props.cssOptions.indexLinkActive : ""}`
 
         return {
+            cssClass,
+            getPath,
             getHandle
         }
     },

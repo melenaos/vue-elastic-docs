@@ -12,7 +12,10 @@ import ElasticDocContent from './ElasticDocContent.vue'
 
 export default defineComponent({
   props: {
-    section: undefined as ElasticDocPageSectionModel | undefined
+    section: {
+      type: Object as () => ElasticDocPageSectionModel,
+      required: true,
+    },
   },
   setup(props) {
     const header = computed(() => "h" + props.section.headerSize)

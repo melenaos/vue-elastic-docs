@@ -1,30 +1,23 @@
 <script setup>
-import { ElasticDocPage, ElasticDocIndex } from '../index'
-import Data from './Data'
+
 </script>
 
 <template>
-  <div class="sidebar">
-    <ElasticDocIndex :data="Data" />
-  </div>
-
-  <main>
-    <ElasticDocPage :page="Data.pages[0]" />
-  </main>
+  <router-view />
 </template>
 
 <style>
-
-body{
+body {
   display: initial;
   grid-template-columns: initial;
 }
-#app{
+
+#app {
   display: grid;
   grid-template-columns: 204px 1fr min(45rem, calc(100% - 230px)) 1fr;
 }
 
-main{
+main {
   grid-column: 3;
 }
 </style>
